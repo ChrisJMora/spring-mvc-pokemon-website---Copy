@@ -19,7 +19,6 @@ public class PokemonController {
 
     @GetMapping("/pokemons")
     public String pokemonListDetail(Model model) {
-        // Busca al pokemon en función de su id
         List<Pokemon> pokemonList = pokemonService.getThemAll();
         model.addAttribute("pokemonList", pokemonList);
         return "pokemons";
