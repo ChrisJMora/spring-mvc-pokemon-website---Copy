@@ -19,7 +19,7 @@ Presentar en una diapositiva: Caché en memoria y Redis.
 
 - [Spring Boot](https://start.spring.io/)
 - [Docker](https://www.docker.com/products/docker-desktop/)
-- [Imágen de redis en Docker](https://hub.docker.com/_/redis)
+- [Imagen de redis en Docker](https://hub.docker.com/_/redis)
 
 ## Spring Boot
 
