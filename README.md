@@ -8,6 +8,8 @@ La aplicación debe escribir registros en la base de datos y también acceder pa
 
 Presentar en una diapositiva: Caché en memoria y Redis.
 
+![redis_architecture](imagenes/redis_architecture.jpg)
+
 ## Integrantes
 
 - David Guamán
