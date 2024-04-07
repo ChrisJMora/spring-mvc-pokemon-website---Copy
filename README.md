@@ -62,6 +62,12 @@ Presentar en una diapositiva: Caché en memoria y Redis.
 
 # Evidencia
 
+## Página web
+
+Se accede al *endpoint* `http://localhost:8080/pokemon?id=1`
+
+![pagina_web](imagenes/pagina_web.png)
+
 ## Primera lectura
 
 En la primera lectura, la caché "falla" en encontrar la información del pokemon con id = 1, por lo que accede a la base de datos. Esto se lo puede apreciar en la línea de *Hibernate*. Al final el dato se guarda en la caché.
