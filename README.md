@@ -59,3 +59,30 @@ Presentar en una diapositiva: Caché en memoria y Redis.
 > KEYS *
 > FLUSHALL
 ```
+
+# Evidencia
+
+## Primera lectura
+
+En la primera lectura, la caché "falla" en encontrar la información del pokemon con id = 1, por lo que accede a la base de datos. Esto se lo puede apreciar en la línea de *Hibernate*. Al final el dato se guarda en la caché.
+
+![primera_lectura](imagenes/primera_lectura.png)
+
+``` cli
+> Getting cached data from region [`pokemonCache` (AccessType[read-write])] by key [com.pokemon.demo.model.Pokemon#1]
+> Cache miss : region = `pokemonCache`, key = `com.pokemon.demo.model.Pokemon#1`
+> Hibernate: select p1_0.national_number,p1_0.height,p1_0.name,p1_0.weight from pokemon p1_0 where p1_0.national_number=?
+> Caching data from load [region=`pokemonCache` (AccessType[read-write])] : key[com.pokemon.demo.model.Pokemon#1] -> value[CacheEntry(com.pokemon.demo.model.Pokemon)]
+```
+
+## Segunda lectura
+
+En la segunda lectura, la caché ya cuenta con la información de pokemon con id = 1, por ende, ya no es necesario acceder a la base de datos. Esto se lo puede evidenciar en la última línea.
+
+![segunda_lectura](imagenes/segunda_lectura.png)
+
+```cli
+> Getting cached data from region [`pokemonCache` (AccessType[read-write])] by key [com.pokemon.demo.model.Pokemon#1]
+> Checking readability of read-write cache item [timestamp=`7014273719951360`, version=`null`] : txTimestamp=`7014274480545792`
+> Cache hit : region = `pokemonCache`, key = `com.pokemon.demo.model.Pokemon#1`
+```
