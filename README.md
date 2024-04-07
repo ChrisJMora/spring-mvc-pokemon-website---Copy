@@ -62,7 +62,7 @@ Presentar en una diapositiva: Caché en memoria y Redis.
 > FLUSHALL
 ```
 
-# Evidencia
+# Resultados
 
 ## Página web
 
