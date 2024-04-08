@@ -62,15 +62,25 @@ Presentar en una diapositiva: Caché en memoria y Redis.
 > FLUSHALL
 ```
 
-# Resultados
+## Base de datos
 
-## Página web
+### Acceso
+
+[http://localhost:8080/h2-console](http://localhost:8080/h2-console)
+
+> Credenciales:
+> - User Name: sa
+> - Password: password
+
+## Resultados
+
+### Página web
 
 Se accede al *endpoint* `http://localhost:8080/pokemon?id=1`
 
 ![pagina_web](imagenes/pagina_web.png)
 
-## Primera lectura
+### Primera lectura
 
 En la primera lectura, la caché "falla" en encontrar la información del pokemon con id = 1, por lo que accede a la base de datos. Esto se lo puede apreciar en la línea de *Hibernate*. Al final el dato se guarda en la caché.
 
@@ -83,7 +93,7 @@ En la primera lectura, la caché "falla" en encontrar la información del pokemo
 > Caching data from load [region=`pokemonCache` (AccessType[read-write])] : key[com.pokemon.demo.model.Pokemon#1] -> value[CacheEntry(com.pokemon.demo.model.Pokemon)]
 ```
 
-## Segunda lectura
+### Segunda lectura
 
 En la segunda lectura, la caché ya cuenta con la información de pokemon con id = 1, por ende, ya no es necesario acceder a la base de datos. Esto se lo puede evidenciar en la última línea.
 
