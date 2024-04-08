@@ -80,7 +80,7 @@ Presentar en una diapositiva: Caché en memoria y Redis.
 
 Se accede al *endpoint* `http://localhost:8080/pokemon/detail?id=1`
 
-![pagina_web](imagenes/pagina_web.png)
+![pagina_web](imagenes/pokemon_detail.png)
 
 ### Primera lectura
 
