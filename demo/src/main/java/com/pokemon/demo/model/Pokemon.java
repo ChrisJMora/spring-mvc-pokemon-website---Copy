@@ -17,6 +17,7 @@ import java.util.Set;
 @Table(name = "Pokemon")
 public class Pokemon {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long national_number;
     private String name;
     private float height;

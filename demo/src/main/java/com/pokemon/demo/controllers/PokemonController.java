@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -17,16 +19,15 @@ public class PokemonController {
     @Autowired
     PokemonService pokemonService;
 
-    @GetMapping("/pokemons")
-    public String pokemonListDetail(Model model) {
-        // Busca al pokemon en función de su id
+    @GetMapping("/pokemon/list")
+    public String showPokemonList(Model model) {
         List<Pokemon> pokemonList = pokemonService.getThemAll();
         model.addAttribute("pokemonList", pokemonList);
-        return "pokemons";
+        return "pokemon/list";
     }
 
-    @GetMapping("/pokemon")
-    public String pokemonDetail(@RequestParam(name="id", required=false, defaultValue="1") int id, Model model) {
+    @GetMapping("/pokemon/detail")
+    public String showPokemonDetail(@RequestParam(name="id", required=false, defaultValue="1") int id, Model model) {
         // Busca al pokemon en función de su id
         Optional<Pokemon> optionalPokemon = pokemonService.getPokemonById(id);
         if (optionalPokemon.isPresent())
@@ -37,7 +38,19 @@ public class PokemonController {
             model.addAttribute("height", pokemon.getHeight());
             model.addAttribute("weight", pokemon.getWeight());
         }
-        return "pokemon";
+        return "pokemon/detail";
     }
 
+    @GetMapping("/pokemon/add")
+    public String showPokemonForm(Model model) {
+        model.addAttribute("pokemon", new Pokemon());
+        return "pokemon/add";
+    }
+
+    @PostMapping("/pokemon/save")
+    public String addPokemon(@ModelAttribute Pokemon pokemon) {
+        // Agrega un nuevo pokemon a la base de datos
+        pokemonService.addPokemon(pokemon);
+        return "redirect:/pokemon/list";
+    }
 }

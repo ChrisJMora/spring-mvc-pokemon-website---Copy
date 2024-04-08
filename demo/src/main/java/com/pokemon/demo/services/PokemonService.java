@@ -21,4 +21,8 @@ public class PokemonService {
     public Optional<Pokemon> getPokemonById(long id){
         return pokemonRepository.findById(id);
     }
+
+    public Pokemon addPokemon(Pokemon pokemon) {
+        return pokemonRepository.save(pokemon);
+    }
 }

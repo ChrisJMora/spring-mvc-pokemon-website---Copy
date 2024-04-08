@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar pokemon</title>
+</head>
+<body>
+<h1>Agregar pokemon</h1>
+<form action="/pokemon/save" method="post" th:object="${pokemon}">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" th:field="*{name}">
+
+    <label for="height">Altura (ft):</label>
+    <input type="number" id="height" name="height" th:field="*{height}">
+
+    <label for="weight">Peso (Kg):</label>
+    <input type="number" id="weight" name="weight" th:field="*{weight}">
+
+    <button type="submit">Guardar</button>
+</form>
+</body>
+
+<form action="/pokemon/list" method="GET">
+    <button type="submit">Regresar</button>
+</form>
+</html>

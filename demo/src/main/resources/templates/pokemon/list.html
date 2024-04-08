@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th># </th>
+        <th>Nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="obj : ${pokemonList}">
+        <td th:text="${obj.getNational_number()}"></td>
+        <td th:text="${obj.getName()}"></td>
+        <td>
+            <a th:href="@{'/pokemon/detail?id=' + ${obj.getNational_number()}}">Detalles</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<form action="/pokemon/add" method="GET">
+    <button type="submit">Agregar</button>
+</form>
+
+</body>
+</html>
