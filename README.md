@@ -45,7 +45,7 @@ Presentar en una diapositiva: Caché en memoria y Redis.
 
 ``` cli
 > docker pull redis
-> docker docker run --name redisDemo -p 6379:6379 -d redis
+> docker run --name redisDemo -p 6379:6379 -d redis
 ```
 
 ### Terminal:
