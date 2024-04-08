@@ -1,0 +1,30 @@
+/* Basic table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd; /* Border color for the table */
+}
+
+/* Table header */
+th {
+    background-color: #f2f2f2; /* Background color for the header */
+    color: #333; /* Text color for the header */
+    padding: 8px; /* Padding inside header cells */
+    border-bottom: 1px solid #ddd; /* Border color for bottom of header cells */
+}
+
+/* Table rows */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Background color for even rows */
+}
+
+/* Table data cells */
+td {
+    padding: 8px; /* Padding inside cells */
+    border-bottom: 1px solid #ddd; /* Border color for bottom of cells */
+}
+
+/* Hover effect on table rows */
+tr:hover {
+    background-color: #f2f2f2; /* Background color on hover */
+}
