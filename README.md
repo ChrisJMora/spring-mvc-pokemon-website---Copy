@@ -8,6 +8,8 @@ La aplicación debe escribir registros en la base de datos y también acceder pa
 
 Presentar en una diapositiva: Caché en memoria y Redis.
 
+![redis_architecture](imagenes/redis_architecture.jpg)
+
 ## Integrantes
 
 - David Guamán
@@ -60,7 +62,7 @@ Presentar en una diapositiva: Caché en memoria y Redis.
 > FLUSHALL
 ```
 
-# Evidencia
+# Resultados
 
 ## Página web
 
@@ -92,3 +94,8 @@ En la segunda lectura, la caché ya cuenta con la información de pokemon con id
 > Checking readability of read-write cache item [timestamp=`7014273719951360`, version=`null`] : txTimestamp=`7014274480545792`
 > Cache hit : region = `pokemonCache`, key = `com.pokemon.demo.model.Pokemon#1`
 ```
+
+## Referencias
+
+- [Scaling Spring Boot with Hibernate 2nd Level Cache on Redis](https://medium.com/@shahto/scaling-spring-boot-with-hibernate-2nd-level-cache-on-redis-54d588fc8b06 )
+- [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content)
