@@ -68,9 +68,11 @@ Presentar en una diapositiva: Caché en memoria y Redis.
 
 [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 
+> [!IMPORTANT]  
 > Credenciales:
-> - User Name: sa
-> - Password: password
+> - JDBC URL: `jdbc:h2:mem:testdb`
+> - User Name: `sa`
+> - Password: `password`
 
 ## Resultados
 
